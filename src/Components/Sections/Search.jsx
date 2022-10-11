@@ -20,7 +20,7 @@ const Search = ({urlAPI}) => {
 
 
     return (
-        <div className='bg-gradient-to-t from-blue-900 to-sky-900 h-screen p-20'>
+        <div className='bg-gradient-to-t from-blue-900 to-sky-900 h-screen w-screen p-20'>
             <form onSubmit={submitHanlder} className='flex 
             flex-col justify-center items-center text-left'>
                 <label className="text-3xl text-white font-semibold">Buscar</label>

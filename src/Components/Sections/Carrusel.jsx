@@ -39,7 +39,7 @@ const Carrusel =  (props) => {
 
 
     return (
-        <div className='text-white'>
+        <div className='text-white flex flex-col justify-center items-center'>
             <h1 className='text-3xl text-left ml-10 p-4 font-semibold'>{props.category}</h1>
             <Led color='bg-sky-500'/>
             <Swiper

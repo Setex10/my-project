@@ -13,10 +13,9 @@ function App() {
     <div className='bg-slate-900'>
       <Menu />
       <Routes >
-        <Route path='' element={<Content url={API}/>}/>
-        <Route path='/animes/:id' element={<Synospsis urlAPI={API}/>}/>
-        <Route path='/search' element={<Search urlAPI={API}/>} />
-        <Route path='/search/animes/:id' element={<Synospsis urlAPI={API}/>} />
+        <Route path='my-project' element={<Content url={API}/>}/>
+        <Route path='animes/:id' element={<Synospsis urlAPI={API}/>}/>
+        <Route path='search' element={<Search urlAPI={API}/>} />
       </Routes>
     </div>
   );

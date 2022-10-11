@@ -36,7 +36,7 @@ const Synospsis = ({urlAPI}) => {
     }, [])
 
     return (
-        <CardHome className='h-full pt-20 space-x-5'>
+        <CardHome className='h-full pt-20 space-x-5 relative'>
             <ImageDisplay className='w-screen movilL:w-2/4 tablet:w-1/4 h-3/4' src={data.images} alt={data.title} />
             <Description>
                 <h1 className="text-4xl">{data.title}</h1>
