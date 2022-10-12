@@ -68,7 +68,7 @@ const Carrusel =  (props) => {
                         alt={d.title} />
                     </Link>
                         <h2 className='opacity-0 hover:opacity-100 transition-all text-slate-900 font-semibold
-                        p-3 absolute bottom-0 bg-white w-52'>{d.title}</h2>
+                        p-3 absolute bottom-2 bg-white w-52'>{d.title}</h2>
                 </SwiperSlide>
             })
         }

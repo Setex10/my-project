@@ -14,7 +14,7 @@ const Synospsis = ({urlAPI}) => {
             webp: {
                 large_image_url: ''
             }
-        }
+        }, url: ''
     })
 
     const lengthDescriptionMax = 200;
@@ -24,11 +24,11 @@ const Synospsis = ({urlAPI}) => {
             try{
                 const data = await fetch(`${urlAPI}anime/${id}`)
             const resolveData = await data.json()
-            const {title, synopsis, images} = resolveData.data
-            setData({title, synopsis, images: images.webp.large_image_url})
+            const {title, synopsis, images, url} = resolveData.data
+            setData({title, synopsis, images: images.webp.large_image_url, url})
             } catch {
                 setData({title: "Error", synopsis: "No se ha encontrado la información",
-                images: imageError
+                images: imageError, url: ''
             })
             } 
         }
@@ -42,6 +42,9 @@ const Synospsis = ({urlAPI}) => {
                 <h1 className="text-4xl">{data.title}</h1>
                 <p className="text-2xl">{data.synopsis > lengthDescriptionMax ?
                 data.synopsis : data.synopsis.split(".", 3)}</p>
+                <a href={data.url} className="bg-sky-500 transition-colors rounded hover:bg-yellow-500 
+                text-2xl w-3/4 m-auto p-6 pt-0 pb-0 movilL:w-2/4
+                ">Ver mas</a>
             </Description>
         </CardHome>
     )
