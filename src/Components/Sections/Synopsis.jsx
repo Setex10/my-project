@@ -1,34 +1,25 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CardHome from "../UI/CardHome";
-import Description from "../UI/Description";
 import ImageDisplay from "../UI/ImageDisplay";
 import imageError from "../../Assets/img/error.webp"
+import InformationAnime from "./InformationAnime";
 
 const Synospsis = ({urlAPI}) => {
     const {id} = useParams()
 
-    const [data, setData] = useState({
-        title: 'Cargando', synopsis: 'Espere mientras encontramos la información',
-        images: {
-            webp: {
-                large_image_url: ''
-            }
-        }, url: ''
-    })
+    const [data, setData] = useState('')
 
-    const lengthDescriptionMax = 200;
 
     useEffect(() => {
         const FetchID = async () => {
             try{
                 const data = await fetch(`${urlAPI}anime/${id}`)
-            const resolveData = await data.json()
-            const {title, synopsis, images, url} = resolveData.data
-            setData({title, synopsis, images: images.webp.large_image_url, url})
+                const resolveData = await data.json()
+                const {title, synopsis, images, trailer, url, episodes, type, studios} = resolveData.data
+                setData({title, synopsis, images: images.webp.large_image_url, trailer, url, episodes, type, studios})
             } catch {
                 setData({title: "Error", synopsis: "No se ha encontrado la información",
-                images: imageError, url: ''
+                images: imageError, trailer: '', url: '', studios: '',
             })
             } 
         }
@@ -36,17 +27,15 @@ const Synospsis = ({urlAPI}) => {
     }, [])
 
     return (
-        <CardHome className='h-full pt-20 space-x-5 relative'>
-            <ImageDisplay className='w-screen movilL:w-2/4 tablet:w-1/4 h-3/4' src={data.images} alt={data.title} />
-            <Description>
-                <h1 className="text-4xl">{data.title}</h1>
-                <p className="text-2xl">{data.synopsis > lengthDescriptionMax ?
-                data.synopsis : data.synopsis.split(".", 3)}</p>
-                <a href={data.url} className="bg-sky-500 transition-colors rounded hover:bg-yellow-500 
-                text-2xl w-3/4 m-auto p-6 pt-0 pb-0 movilL:w-2/4
-                ">Ver mas</a>
-            </Description>
-        </CardHome>
+        <section className='h-screen w-full flex justify-center relative'>
+            <ImageDisplay src={data.images} className="w-full"/>
+            <div className='bg-gradient-to-t from-blue-800 via-blue-600 h-screen w-full 
+            absolute top-20 text-center text-white'>
+                {typeof data === 'object' ? <InformationAnime information={data}/> 
+                : <h1 className="text-4xl">Cargando...</h1>}
+            </div>
+            
+        </section>
     )
 }
 

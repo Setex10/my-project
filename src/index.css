@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.InformationAnime > p {
+    display: flex;
+    align-items: center;
+}
+
+.InformationAnime > p > svg {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}

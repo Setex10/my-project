@@ -4,13 +4,15 @@ import './App.css';
 import Menu from './Components/Menu/Menu';
 import Content from './Components/Content';
 import Search from './Components/Sections/Search';
+import { useEffect } from 'react';
 
 function App() {
   const API = 'https://api.jikan.moe/v4/'
 
+  
 
   return (
-    <div className='bg-slate-900'>
+    <div className=''>
       <Menu />
       <Routes >
         <Route path='my-project' element={<Content url={API}/>}/>
