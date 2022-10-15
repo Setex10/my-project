@@ -30,7 +30,7 @@ const Search = ({urlAPI}) => {
                 : 'Ingresa un nombre'
                 }`} name="name" ref={input}/>
             </form>
-            {valueUrl && <Carrusel gategory="Esto es lo que encontramos" api={valueUrl}/>}
+            {valueUrl && <Carrusel gategory="This is We found" api={valueUrl}/>}
         </div>
     )
 }

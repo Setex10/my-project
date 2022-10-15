@@ -2,12 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+.InformationAnime {
+    display: flex;
+    flex-wrap: wrap;;
+}
+
 .InformationAnime > p {
     display: flex;
     align-items: center;
+    margin: 0.2rem;
+}
+
+.InformationAnime > a > svg {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .InformationAnime > p > svg {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+}
+
+.InformationAnime > a {
+    margin: auto 0.5rem 0.5rem 0.5rem;
 }
