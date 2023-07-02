@@ -8,7 +8,7 @@ const InformationAnime = ({data, title, synopsis, streaming}) => {
     const icons = [<BsCollectionPlayFill />, <BiMovie />, <FiMonitor />]
 
     return (
-        <div className="text-white p-3 flex flex-col space-y-2">
+        <div className="text-white p-3 flex flex-col space-y-2 h-2/4 item-left tablet:w-2/4">
             <h1 className="text-3xl font-semibold">{title}</h1>
             <div className="InformationAnime">
                 {data.map((element, index) => {

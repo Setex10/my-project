@@ -1,9 +1,4 @@
-import {SiCrunchyroll, SiNetflix} from "react-icons/si"
-import {BiHappyAlt} from "react-icons/bi"
-
 const Streaming = ({services}) => {
-
-    const icons = [<SiCrunchyroll />,<BiHappyAlt />, <SiNetflix /> ]
 
     return (
         <div>

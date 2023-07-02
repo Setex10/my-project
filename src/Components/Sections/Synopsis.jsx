@@ -11,7 +11,7 @@ const Synopsis = ({synopsis}) => {
         <div>
             <h3 className="text-3xl font-semibold">Synopsis</h3>
             <div className="mb-5">
-                <article className="h-full">
+                <article className={`${show && "overflow-y-auto"} h-96 tablet:text-2xl tablet:w-3/4 mt-1`}>
                     {show ? synopsis : synopsis.split(".", 2)[0] + "."}
                 </article>
             </div>
